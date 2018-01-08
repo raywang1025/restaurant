@@ -1,0 +1,431 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img {
+	max-width: 100%;
+	height:auto;
+}
+
+/* cssreset */
+
+/* container */
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+	letter-spacing: 1px;
+	line-height:1.25;
+}
+/* .clearfix {
+	content:'';
+	display:table;
+	clear:both;
+} */
+.clear {
+	clear:both;	
+}
+a {
+	text-decoration: none;
+}
+
+/* header */
+.header {
+	max-width: 960px;
+	height:50px;
+	background-color: #000;
+	padding-top:10px;
+	position: relative;
+}
+.header_logo {
+	float:left;
+}
+.showmenu {
+	display:none;
+	color:white;
+}
+.header_logo a{
+	background-image: url(../images/logo_w.png);
+	width: 120px;
+	height: 24px;
+	
+	display: block;
+	text-indent:101%;
+	overflow:hidden;
+	white-space:nowrap;
+}
+.header_menu {
+	float:right;
+}
+.header_menu li {
+	float: left;
+	padding:5px 10px;
+	margin-right:30px;
+}
+.header_menu li a {
+	color:white;
+}
+
+@media (max-width: 767px){
+	.header_menu {
+		/* 隱藏選單 */
+		max-height: 0;
+		overflow: hidden;
+		/* 絕對定位疊在網頁上 */
+		transition: max-height 1s;
+		position: absolute;
+		z-index: 100;
+		top:60px;
+		left:0;
+		right:0;
+		background: #000;
+	}
+	.header_menu li {
+		float: none;
+	}
+	.showmenu {
+		display: block;
+		float:right;
+	}
+	.menu-show .header_menu{
+    	max-height: 90px;
+	}
+}
+/* banner */
+.banner {
+	background-image: url(../images/header_desktop.png);
+	background-color:black;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 420px;
+	/* 子元素加入 */
+	position: relative;
+}
+.banner_box {
+	max-width: 400px;
+	height:150px;
+	background-color: rgba(0, 0, 0, 0.3);
+	text-align:center;
+	color:#fff;
+	/* 父元素加入 */
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	margin:auto;
+}
+.banner_box h2 {
+	font-size:30px;
+}
+@media (max-width:767px){
+	.banner {
+		background-image: url("../images/header_mobile.png");
+
+	}
+}
+/* secret */
+.secret {
+	text-align: center;
+	background-color: #EFE9E7;
+	padding:30px 0;
+	padding-left:1%;
+	padding-right:1%;
+}
+.secret h3 {
+	padding:30px 0;
+	font-size:20px;
+	color:#3D1101;
+}
+
+.secret li {
+	float:left;
+	width: 33.3333%;
+	height: auto;
+}
+.section_pic img{
+	border-radius: 50%;
+	max-width: 200px;
+
+
+}
+@media (max-width:767px){
+	.secret li {
+		float:none;
+		width: 100%;
+		padding-bottom:30px;
+	}
+}
+/* chief */
+.chief {
+	background-color: #3D1101;
+	max-width: 960px;
+}
+.chief_pic {
+	float:left;
+	padding-left:5%;
+	max-width:45%;
+}
+.chief_intro {
+	max-width: 40%;
+	padding-top:30px;
+	padding-right:5%;
+	padding-left:5%;
+	float:right;
+	color:#fff;
+}
+@media (max-width:767px){
+	.chief_pic {
+		float:none;
+		/* padding:0; */
+		max-width:100%;
+		padding-right:5%;
+	}
+	.chief_pic img {
+		max-width: 100%;
+	}
+	.chief_intro {
+		float:none;
+		padding:5%;
+		max-width: 95%;
+		height: auto;
+	}
+
+}
+/* opinion */
+.opinion {
+	background-color: #EFE9E7;
+	max-width: 960px;
+	padding: 30px 0;
+}
+.opinion_section li{
+	max-width: 31.3333%;
+	padding-top:10px;
+	padding:0 1%;
+	float:left;
+	line-height: 1.5;
+}
+.opinion_section img {
+	margin-left:5%;
+	/* width: 15%; */
+	float:left;
+	border-radius: 50%;
+}
+.customer {
+	max-width: 80%;
+	float:right;
+	color:#3D1101;
+}
+.opinion > h3 {
+	color:#3D1101;
+	text-align: center;
+	font-size:22px;
+	padding:30px 0;
+}
+.role {
+	float:right;
+}
+@media (max-width:767px){
+	.opinion_section li{
+		float:none;
+		max-width: 100%;
+	}
+	.customer {
+		padding-top:20px;
+	}
+	.role {
+		padding-right:50px;
+	}
+}
+
+/* reservation */
+.reservation {
+	max-width: 960px;
+	background-color: #F5F3F2;
+	padding:30px 0;
+	position: relative;
+}
+.reservation h3 {
+	text-align: center;
+	padding:50px 0;
+	font-size:25px;
+	color:#3D1101;
+}
+.reservation_map {
+	padding-left:20px;
+	width: 480px;
+	float:left;	
+	position: relative;
+  	/* width: 100%; */
+  	height: 0;
+  	padding-bottom: 56.25%;
+}
+.reservation_form {
+	max-width: 460px;
+	padding-left:30px;
+
+	float:left;
+
+	
+}
+.reservation_form form{
+	color: #3D1101;
+	padding-right:20px;;
+}
+.bar {
+		max-width: 100%;
+	}
+.google_map {
+		position: absolute;
+  		width: 100%;
+  		height: 100%;  
+	}
+@media (max-width:767px){
+	.reservation_map {
+		float:none;
+		max-width: 100%;
+		padding-left: 0;	
+	}
+	.reservation_form {
+		float:none;
+		max-width: 100%;
+		padding-right:0;
+		margin:0 auto;
+		
+	}
+	
+	.reservation_form form {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	
+}
+/* footer */
+.footer {
+	max-width: 960px;
+	background-color: #EFE9E7;
+	padding-top:40px;
+
+}
+.footer h2 {
+	color: #3D1101;
+	font-size: 20px;
+
+}
+.footer_about {
+	width: 290px;
+	height: auto;
+	float:left;
+	padding-left:30px;
+	padding-bottom:30px;
+}
+.footer_contact {
+	width: 290px;
+	height: auto;
+	float:left;
+	padding-left:30px;
+}
+.footer_contact ul {
+	list-style: disc;
+	padding-left:20px;
+}
+.footer_social {
+	width: 290px;
+	height: auto;
+	float:right;
+	text-align: right;
+	padding-right:30px;
+}
+.footer_social h2 {
+	font-size:35px;
+	color: #3D1101;
+	font-weight:700;
+}
+@media (max-width:767px){
+	.footer_about {
+		float:none;
+		/* padding:20px; */
+		width: 90%;
+		padding-top:20px;
+		padding-left:5%;
+		padding-right:5%;
+	}
+	.footer_contact {
+		float:none;
+		padding:20px;
+	}
+	.footer_social {
+		float:none;
+		padding:20px;
+
+	}
+}
+/* pure-css */
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+	color: white;
+	border-radius: 4px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.button-warning {
+	background: rgb(223, 117, 20); /* this is an orange */
+	float:right;
+}
+.button-darkgray {
+	background: #A09E9E;
+	float:right;
+	margin-right:50px;
+}
+@media (max-width:767px){
+	.button-darkgray {
+		float:left;
+	}
+	.button-warning {
+		float:left;
+	}
+}

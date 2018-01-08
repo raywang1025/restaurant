@@ -1,0 +1,388 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img {
+	max-width: 100%;
+	height:auto;
+}
+
+/* cssreset */
+
+/* container */
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+	letter-spacing: 1px;
+	line-height:1.25;
+}
+/* .clearfix {
+	content:'';
+	display:table;
+	clear:both;
+} */
+.clear {
+	clear:both;	
+}
+a {
+    text-decoration: none;
+    color:black;
+}
+
+/* header */
+.header {
+	max-width: 960px;
+	height:50px;
+	background-color: #000;
+	padding-top:10px;
+	position: relative;
+}
+.header_logo {
+	float:left;
+}
+.showmenu {
+	display:none;
+	color:white;
+}
+.header_logo a{
+	background-image: url(../images/logo_w.png);
+	width: 120px;
+	height: 24px;
+	
+	display: block;
+	text-indent:101%;
+	overflow:hidden;
+	white-space:nowrap;
+}
+.header_menu {
+	float:right;
+}
+.header_menu li {
+	float: left;
+	padding:5px 10px;
+	margin-right:30px;
+}
+.header_menu li a {
+	color:white;
+}
+
+@media (max-width: 767px){
+	.header_menu {
+		/* 隱藏選單 */
+		max-height: 0;
+		overflow: hidden;
+		/* 絕對定位疊在網頁上 */
+		transition: max-height 1s;
+		position: absolute;
+		z-index: 100;
+		top:60px;
+		left:0;
+		right:0;
+		background: #000;
+	}
+	.header_menu li {
+		float: none;
+	}
+	.showmenu {
+		display: block;
+		float:right;
+	}
+	.menu-show .header_menu{
+    	max-height: 90px;
+	}
+}
+/* banner */
+.banner {
+	background-image: url(../images/header_desktop.png);
+	background-color:black;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 420px;
+	/* 子元素加入 */
+	position: relative;
+}
+.banner_box {
+	max-width: 400px;
+	height:150px;
+	background-color: rgba(0, 0, 0, 0.3);
+	text-align:center;
+	color:#fff;
+	/* 父元素加入 */
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	margin:auto;
+}
+.banner_box h2 {
+	font-size:30px;
+}
+@media (max-width:767px){
+	.banner {
+		background-image: url("../images/header_mobile.png");
+
+	}
+}
+/* main */
+.main_menu {
+    width: 300px;
+    float:left;
+}
+.main_menu h2 {
+    font-size: 20px;
+}
+.main_menu li {
+    border-bottom:1.5px solid black;
+    line-height: 1.5;
+}
+.main_menu a {
+    color:brown;
+}
+.main_menu li:hover {
+    background-color: brown;
+}
+.main_menu a:hover {
+    color:white;
+}
+
+.main_content {
+    margin-left:300px;
+}
+/* main_content */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+.search {
+  width: 190%;
+  position: relative;
+  margin-top:50px;
+  margin-left:10px;
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 3px solid brown;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: brown;
+}
+
+.searchTerm:focus{
+  color:darkgray;
+}
+
+.searchButton {
+  position: absolute;  
+  right: -50px;
+  width: 40px;
+  height: 36px;
+  border: 1px solid brown;
+  background: brown;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+/* main_content */
+
+.main_content_wrap {
+    float:left;
+}
+.main_content_buy {
+    float:right;
+}
+.buy_function {
+    margin-top:40px;    
+}
+.buy_function li{
+    float:left;
+    margin:20px 0px;
+    padding:0 30px;
+}
+.buy_function li:first-child {
+    border-right:2px solid black;
+}
+.main_content_product {
+    float:right;
+}
+.main_content_product_item {
+    width: 200px;
+    float:left;
+    margin-left:5px;
+    margin-top:20px;
+    margin-right:5px;
+    margin-bottom: 20px;
+    padding:10px 5px;
+    text-align: center;
+    height: 220px;
+    color:#3D1101;
+    box-shadow: 1px 1px 1px darkgray;
+}
+.main_content_product_item button {
+    color:orange;
+    margin-top:20px;
+    border:1.5px solid orange;
+    border-radius: 5px;
+}
+.main_content_product_item hr {
+    width: 30%;
+}
+.main_content_product_item p {
+    font-size: 8px;
+}
+@media (max-width:768px){
+    .main_menu {
+        float:none;
+        margin:0 auto;
+    }
+    .main_menu ul {
+        max-width: 100%;
+    }
+    .main_content {
+        margin-left:0;
+    }
+    .search {
+        width: 170%;
+        margin-top:10px;
+    }
+    .main_content_buy {
+        float:right;
+        padding-top:50px;
+    }
+    .main_content_product {
+        float:none;
+    }
+    .buy_function {
+        margin-top:0;
+    }
+    .main_content_product_item {
+        width: 90%;
+        padding-left:0;
+        padding-right:0;
+        margin-left:5%;
+        margin-right:5%;
+
+        
+    }
+    .main_content_product_item button {
+    color:orange;
+    padding:2px 130px;
+    border:1.5px solid orange;
+    border-radius: 5px;
+    }
+}
+
+
+/* footer */
+.footer {
+	max-width: 960px;
+	background-color: #EFE9E7;
+	padding-top:40px;
+
+}
+.footer h2 {
+	color: #3D1101;
+	font-size: 20px;
+
+}
+.footer_about {
+	width: 290px;
+	height: auto;
+	float:left;
+	padding-left:30px;
+	padding-bottom:30px;
+}
+.footer_contact {
+	width: 290px;
+	height: auto;
+	float:left;
+	padding-left:30px;
+}
+.footer_contact ul {
+	list-style: disc;
+	padding-left:20px;
+}
+.footer_social {
+	width: 290px;
+	height: auto;
+	float:right;
+	text-align: right;
+	padding-right:30px;
+}
+.footer_social h2 {
+	font-size:35px;
+	color: #3D1101;
+	font-weight:700;
+}
+@media (max-width:767px){
+	.footer_about {
+		float:none;
+		/* padding:20px; */
+		width: 90%;
+		padding-top:20px;
+		padding-left:5%;
+		padding-right:5%;
+	}
+	.footer_contact {
+		float:none;
+		padding:20px;
+	}
+	.footer_social {
+		float:none;
+		padding:20px;
+
+	}
+}
